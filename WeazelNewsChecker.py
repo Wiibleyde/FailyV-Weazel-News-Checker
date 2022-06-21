@@ -44,7 +44,7 @@ def sendMessage(title, author, url, img):
 
 if __name__ == '__main__':
     url='https://panel.failyv.com/weazelnews/'
-    noteLastArticle(str(getLastArticle(url))[0])
+    noteLastArticle(str(getLastArticle(url)[0]))
     while True:
         lstInfo=getLastArticle(url)
         title=str(lstInfo[0])

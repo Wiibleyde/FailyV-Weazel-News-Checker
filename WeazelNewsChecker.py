@@ -51,7 +51,7 @@ if __name__ == '__main__':
         author=str(lstInfo[1])
         link=f'http://panel.failyv.com/weazelnews/{str(lstInfo[2])}'
         if str(lstInfo[3]).startswith('images/'):
-            img=f'http://panel.failyv.com/weazelnews/'
+            img=f'http://panel.failyv.com/weazelnews/{str(lstInfo[3])}'
         else:
             img=str(lstInfo[3])
         if compareLastArticle(url):

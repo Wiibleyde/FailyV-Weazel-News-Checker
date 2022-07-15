@@ -32,13 +32,13 @@ def getLastArticle(url):
 
 def noteLastArticle(title):
     """save last article title in a file"""
-    with open('last_article.txt', 'w') as f:
+    with open('last_article.txt', 'w', encoding='utf-8') as f:
         f.write(title)
 
 def compareLastArticle(url):
     """compare last article title with last article title in file"""
     last_article=getLastArticle(url)[0]
-    with open('last_article.txt', 'r') as f:
+    with open('last_article.txt', 'r',encoding='utf-8') as f:
         last_article_file=f.read()
     if last_article==last_article_file:
         return False

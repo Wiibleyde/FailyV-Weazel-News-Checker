@@ -1,7 +1,7 @@
 """
 Begining of config
 """
-WEBHOOK_URL="URL_HERE"
+DISCORD_WEBHOOK_URL="URL_HERE"
 UrlWN='http://panel.failyv.com/weazelnews/'
 WikiFaily='https://failyv.fandom.com/fr/wiki/'
 """

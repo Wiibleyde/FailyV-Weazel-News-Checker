@@ -2,6 +2,8 @@
 Begining of config
 """
 WEBHOOK_URL="URL_HERE"
+UrlWN='http://panel.failyv.com/weazelnews/'
+WikiFaily='https://failyv.fandom.com/fr/wiki/'
 """
 End of config
 """
@@ -48,22 +50,22 @@ def sendMessage(title, author, url, img):
     webhook = DiscordWebhook(url=WEBHOOK_URL)
     embed=DiscordEmbed(title='Nouvel article Weazel News !', description=title, color=0xfc0000, url=url)
     authorName=author.replace(' ','_').replace("'","%27")
-    authorUrl=f'https://failyv.fandom.com/fr/wiki/{authorName}'
+    authorUrl=f'{WikiFaily}{authorName}'
     embed.set_author(name=author, url=authorUrl)
     embed.set_image(url=img)
     webhook.add_embed(embed)
     response = webhook.execute()
 
 if __name__ == '__main__':
-    url='https://panel.failyv.com/weazelnews/'
+    url=UrlWN
     noteLastArticle(str(getLastArticle(url)[0]))
     while True:
         lstInfo=getLastArticle(url)
         title=str(lstInfo[0])
         author=str(lstInfo[1])
-        link=f'http://panel.failyv.com/weazelnews/{str(lstInfo[2])}'
+        link=f'{UrlWN}{str(lstInfo[2])}'
         if str(lstInfo[3]).startswith('images/'):
-            img=f'http://panel.failyv.com/weazelnews/{str(lstInfo[3])}'
+            img=f'{UrlWN}{str(lstInfo[3])}'
         else:
             img=str(lstInfo[3])
         if compareLastArticle(url):

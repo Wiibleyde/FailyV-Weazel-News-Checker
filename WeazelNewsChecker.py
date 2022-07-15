@@ -1,5 +1,5 @@
 """
-Config
+Begining of config
 """
 WEBHOOK_URL="URL_HERE"
 """
@@ -45,7 +45,7 @@ def compareLastArticle(url):
 
 def sendMessage(title, author, url, img):
     """send message to discord webhook"""
-    webhook = DiscordWebhook(url=WEBHOOK_URL) #You need to modify your WebHook URL HERE !!
+    webhook = DiscordWebhook(url=WEBHOOK_URL)
     embed=DiscordEmbed(title='Nouvel article Weazel News !', description=title, color=0xfc0000, url=url)
     authorName=author.replace(' ','_').replace("'","%27")
     authorUrl=f'https://failyv.fandom.com/fr/wiki/{authorName}'
